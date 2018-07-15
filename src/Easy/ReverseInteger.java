@@ -2,11 +2,13 @@ package Easy;
 
 public class ReverseInteger {
 	public int reverse(int x) {
-		int reversed = 0;
-		while (x > 0) {
+		long reversed = 0;
+		while (x != 0) {
 			reversed = reversed * 10 + x % 10;
 			x = x / 10;
 		}
-		return reversed;
+		if (reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE)
+			return 0;
+		return (int) reversed;
 	}
 }
