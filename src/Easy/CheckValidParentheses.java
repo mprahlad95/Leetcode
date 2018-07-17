@@ -2,7 +2,7 @@ package Easy;
 
 import java.util.*;
 
-public class CheckValidParenthesis {
+public class CheckValidParentheses {
 	public boolean isValid(String s) {
 		if (s.length() == 0)
 			return true;
