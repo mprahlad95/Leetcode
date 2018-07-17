@@ -2,7 +2,7 @@ package Medium;
 
 import java.util.*;
 
-public class GenerateParenthesis {
+public class GenerateParentheses {
 	List<String> ans = new ArrayList<>();
 
 	public List<String> generateParenthesis(int n) {
