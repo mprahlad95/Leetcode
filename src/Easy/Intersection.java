@@ -1,20 +1,29 @@
 package Easy;
 
 public class Intersection {
-	    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-	        ListNode a = headA;
-	        ListNode b = headB;
-	        ListNode nexta = null, nextb = null;
-	        while(a.next != null && b.next != null) {
-	            if (a.val == b.val) 
-	                return a;
-	            else {
-	                nexta = a.next;
-	                nextb = b.next;
-	                a = a.next;
-	                b = b.next;
-	            }
-	        }
-	        return a;
-	    }
+	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+		int lenA = length(headA), lenB = length(headB);
+		while (lenA > lenB) {
+			headA = headA.next;
+			lenA--;
+		}
+		while (lenA < lenB) {
+			headB = headB.next;
+			lenB--;
+		}
+		while (headA != headB) {
+			headA = headA.next;
+			headB = headB.next;
+		}
+		return headA;
 	}
+
+	private int length(ListNode node) {
+		int length = 0;
+		while (node != null) {
+			node = node.next;
+			length++;
+		}
+		return length;
+	}
+}
