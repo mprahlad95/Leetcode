@@ -17,7 +17,7 @@ public class PalindromePartitioning {
 		} else {
 			for (int i = start; i < s.length(); i++) {
 				if (isPalindrome(s, start, i)) {
-					tempList.add(s.substring(start, i + 1));
+					tempList.add(s.substring(start, i+1));
 					backtrack(s, list, tempList, i + 1);
 					tempList.remove(tempList.size() - 1);
 				}
