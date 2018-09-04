@@ -8,8 +8,10 @@ class LongestCommonPrefix {
 		String pre = strs[0];
 		int i = 1;
 		while (i < strs.length) {
-			while (strs[i].indexOf(pre) != 0)
+			while (strs[i].indexOf(pre) != 0) {
+				System.out.println(strs[i].indexOf(pre));
 				pre = pre.substring(0, pre.length() - 1);// prune from end until common prefix is reached
+			}
 			i++;
 		}
 		return pre;
