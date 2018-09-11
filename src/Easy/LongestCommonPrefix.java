@@ -1,20 +1,27 @@
-
 package Easy;
+
+import java.util.*;
 
 class LongestCommonPrefix {
 	public static String longestCommonPrefix(String[] strs) {
 		if (strs == null || strs.length == 0)
 			return "";
-		String pre = strs[0];
-		int i = 1;
-		while (i < strs.length) {
-			while (strs[i].indexOf(pre) != 0) {
-				System.out.println(strs[i].indexOf(pre));
-				pre = pre.substring(0, pre.length() - 1);// prune from end until common prefix is reached
+		Arrays.sort(strs, new Comparator<String>() {
+			@Override
+			public int compare(String a, String b) {
+				return a.length() - b.length();
 			}
-			i++;
+		});
+		String prefix = strs[0];
+		for (int i = 1; i < strs.length; i++) {
+			while (strs[i].indexOf(prefix) != 0) {
+				prefix = prefix.substring(0, prefix.length() - 1);
+				System.out.println(prefix);
+			}
+			if (prefix.length() == 0)
+				return "";
 		}
-		return pre;
+		return prefix;
 	}
 
 	public static void main(String[] args) {
