@@ -1,33 +1,34 @@
 package Easy;
 
 public class LemonadeChannge {
-	public boolean lemonadeChange(int[] bills) {
-		int fives = 0;
-		int tens = 0;
-		for (int bill : bills) {
-			switch (bill) {
-			case 5:
-				fives++;
-				break;
-			case 10:
-				fives--;
-				tens++;
-				if (fives < 0) {
-					return false;
+	class Solution {
+		public boolean lemonadeChange(int[] bills) {
+			if (bills == null || bills.length == 0)
+				return true;
+			int five = 0, ten = 0;
+			for (int i = 0; i < bills.length; i++) {
+				if (bills[i] == 5) {
+					five++;
 				}
-				break;
-			case 20:
-				if (tens > 0 && fives > 0) {
-					tens--;
-					fives--;
-					break;
-				} else if (fives > 2) {
-					fives -= 3;
-					break;
+				if (bills[i] == 10) {
+					if (five == 0)
+						return false;
+					five--;
+					ten++;
 				}
-				return false;
+				if (bills[i] == 20) {
+					if (five == 0)
+						return false;
+					if (five >= 1 && ten >= 1) {
+						ten--;
+						five--;
+					} else if (five >= 3 && ten == 0) {
+						five -= 3;
+					} else
+						return false;
+				}
 			}
+			return true;
 		}
-		return true;
 	}
 }
