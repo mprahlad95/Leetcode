@@ -1,4 +1,4 @@
-package Hard;
+package Google;
 
 public class TrappingRainWater {
 	public int trap(int[] height) {

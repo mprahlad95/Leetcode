@@ -1,4 +1,4 @@
-package Google_cards;
+package Google;
 
 public class RemoveDuplicatesFromSortedArray {
 	public int removeDuplicates(int[] nums) {

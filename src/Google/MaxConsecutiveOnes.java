@@ -1,4 +1,4 @@
-package Google_cards;
+package Google;
 
 public class MaxConsecutiveOnes {
 	public int findMaxConsecutiveOnes(int[] nums) {

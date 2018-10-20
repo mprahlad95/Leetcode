@@ -1,4 +1,4 @@
-package Google_cards;
+package Google;
 
 public class LicenseKeyFormatting {
 	public String licenseKeyFormatting(String S, int K) {

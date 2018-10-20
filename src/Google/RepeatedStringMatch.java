@@ -1,4 +1,4 @@
-package Google_cards;
+package Google;
 
 public class RepeatedStringMatch {
 	public int repeatedStringMatch(String A, String B) {

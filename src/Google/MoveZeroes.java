@@ -1,4 +1,4 @@
-package Google_cards;
+package Google;
 
 public class MoveZeroes {
 	public void moveZeroes(int[] nums) {
