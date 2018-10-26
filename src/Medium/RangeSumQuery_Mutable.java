@@ -1,9 +1,9 @@
 package Medium;
 
-public class RangeSumQueryMutable {
+public class RangeSumQuery_Mutable {
 	int[] dp, nums;
 
-	public RangeSumQueryMutable(int[] nums) {
+	public RangeSumQuery_Mutable(int[] nums) {
 		if (nums == null || nums.length == 0)
 			return;
 		dp = new int[nums.length];

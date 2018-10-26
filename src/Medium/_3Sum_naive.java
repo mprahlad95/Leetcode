@@ -2,7 +2,7 @@ package Medium;
 
 import java.util.*;
 
-public class ThreeSum_naive {
+public class _3Sum_naive {
 	public List<List<Integer>> threeSum(int[] num) {
 		List<List<Integer>> list = new ArrayList<List<Integer>>();
 		for (int i = 0; i < num.length; i++) {

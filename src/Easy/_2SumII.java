@@ -2,7 +2,7 @@ package Easy;
 
 import java.util.*;
 
-public class TwoSumII {
+public class _2SumII {
 	public int[] twoSum(int[] numbers, int target) {
 		if (numbers == null)
 			return new int[0];
