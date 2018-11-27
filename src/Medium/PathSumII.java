@@ -4,23 +4,28 @@ import java.util.*;
 
 public class PathSumII {
 	public List<List<Integer>> pathSum(TreeNode root, int sum) {
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<List<Integer>> list = new ArrayList<>();
 		if (root == null)
-			return result;
-		List<Integer> temp = new ArrayList<Integer>();
-		helper(root, temp, result, sum);
-		return result;
+			return list;
+		helper(list, new ArrayList<>(), root, sum);
+		return list;
 	}
 
-	public void helper(TreeNode root, List<Integer> temp, List<List<Integer>> result, int sum) {
+	public void helper(List<List<Integer>> list, List<Integer> current, TreeNode root, int sum) {
 		if (root == null)
 			return;
-		temp.add(root.val);
-		if (root.left == null && root.right == null && root.val == sum)
-			result.add(new ArrayList<Integer>(temp));
-		helper(root.left, temp, result, sum - root.val);
-		helper(root.right, temp, result, sum - root.val);
-		temp.remove(temp.size() - 1); // remove leaf node to move to other paths
-		return;
+		// Add to current list, and main list if sum is found
+		current.add(root.val);
+
+		// Check for leaf node and if sum is found
+		if (root.left == null && root.right == null && sum == root.val)
+			list.add(new ArrayList<Integer>(current));
+
+		// Call left and right and subtract sum
+		helper(list, current, root.left, sum - root.val);
+		helper(list, current, root.right, sum - root.val);
+
+		// Backtrack if not found in the entire path
+		current.remove(current.size() - 1);
 	}
 }
