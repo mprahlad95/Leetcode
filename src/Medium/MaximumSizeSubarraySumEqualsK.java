@@ -15,7 +15,7 @@ public class MaximumSizeSubarraySumEqualsK {
 			sum += nums[i];
 			// Store ith current sum into hashmap
 			map.putIfAbsent(sum, i);
-			// Reverse lookup and compare with previously found diff
+			// Reverse lookup for (sum - k) and compare with previously found diff
 			if (map.containsKey(sum - k) && diff < i - map.get(sum - k)) {
 				diff = i - map.get(sum - k);
 			}
